@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎤 Corporate Talks By Melody Metaphysics</title>
+  <meta name="description" content="Transform your team dynamics with ancient Eastern wisdom. Engaging corporate talks on collaboration, decision-making, and peak performance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #0a0012;
+      color: #e8dff0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .bg-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .bg-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 0, 18, 0.85) 0%,
+        rgba(26, 11, 46, 0.9) 50%,
+        rgba(10, 0, 18, 0.95) 100%
+      );
+      z-index: -1;
+    }
+
+    .header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: rgba(232, 223, 240, 0.6);
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+      transition: color 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .back-link:hover {
+      color: rgba(232, 223, 240, 1);
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #e8dff0, #b39ddb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: rgba(232, 223, 240, 0.8);
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    .intro {
+      background: rgba(138, 43, 226, 0.08);
+      border: 1px solid rgba(138, 43, 226, 0.2);
+      border-radius: 16px;
+      padding: 50px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #b39ddb;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: rgba(232, 223, 240, 0.85);
+      margin-bottom: 20px;
+    }
+
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .topic-card {
+      background: rgba(26, 11, 46, 0.5);
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      border-radius: 16px;
+      padding: 35px;
+      transition: all 0.3s ease;
+    }
+
+    .topic-card:hover {
+      background: rgba(26, 11, 46, 0.7);
+      border-color: rgba(138, 43, 226, 0.5);
+      transform: translateY(-5px);
+    }
+
+    .topic-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #b39ddb;
+    }
+
+    .topic-card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(232, 223, 240, 0.75);
+    }
+
+    .form-section {
+      background: rgba(26, 11, 46, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 8px 32px rgba(138, 43, 226, 0.2);
+    }
+
+    .form-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #b39ddb;
+    }
+
+    .form-section > p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: rgba(232, 223, 240, 0.7);
+      margin-bottom: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(232, 223, 240, 0.9);
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    label .required {
+      color: #ff6b9d;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(10, 0, 18, 0.8);
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      border-radius: 10px;
+      color: #e8dff0;
+      font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: rgba(138, 43, 226, 0.6);
+      background: rgba(10, 0, 18, 0.95);
+      box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.15);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #8a2be2, #9d4edd);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+      background: rgba(138, 43, 226, 0.3);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .message {
+      margin-top: 20px;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .message.success {
+      background: rgba(76, 175, 80, 0.2);
+      border: 1px solid rgba(76, 175, 80, 0.5);
+      color: #a5d6a7;
+    }
+
+    .message.error {
+      background: rgba(244, 67, 54, 0.2);
+      border: 1px solid rgba(244, 67, 54, 0.5);
+      color: #ef9a9a;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .intro {
+        padding: 35px 25px;
+      }
+
+      .form-section {
+        padding: 35px 25px;
+      }
+
+      .topics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-wrapper">
+    <img src="assets/bg.jpg" alt="Background">
+  </div>
+  <div class="bg-overlay"></div>
+
+  <div class="header">
+    <a href="/" class="back-link">← Back to Home</a>
+    <h1>Corporate Talks</h1>
+    <p class="tagline">How do teams function at their best?</p>
+  </div>
+
+  <div class="container">
+    <div class="intro">
+      <h2>Ancient Wisdom for Modern Teams</h2>
+      <p>Bring transformative insights to your organization with engaging talks that blend Eastern philosophy with practical team dynamics.</p>
+      <p>Perfect for leadership retreats, team offsites, and corporate events.</p>
+    </div>
+
+    <div class="topics">
+      <div class="topic-card">
+        <h3>Team Dynamics</h3>
+        <p>Understanding natural strengths and how different personalities collaborate effectively using ancient Chinese wisdom.</p>
+      </div>
+
+      <div class="topic-card">
+        <h3>Decision Making</h3>
+        <p>Strategic frameworks from I Ching philosophy to help teams make aligned, confident decisions together.</p>
+      </div>
+
+      <div class="topic-card">
+        <h3>Peak Performance</h3>
+        <p>How to work with natural rhythms and energies rather than against them for sustainable excellence.</p>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Let's Collaborate</h2>
+      <p>Interested in bringing this to your team? Share your details below.</p>
+
+      <form id="corporateForm">
+        <div class="form-group">
+          <label for="name">Your Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company Name <span class="required">*</span></label>
+          <input type="text" id="company" name="company" required>
+        </div>
+
+        <div class="form-group">
+          <label for="teamSize">Team Size</label>
+          <select id="teamSize" name="teamSize">
+            <option value="">Select team size</option>
+            <option value="10-25">10-25 people</option>
+            <option value="26-50">26-50 people</option>
+            <option value="51-100">51-100 people</option>
+            <option value="100+">100+ people</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell us about your event <span class="required">*</span></label>
+          <textarea id="message" name="message" placeholder="Event date, duration, topics of interest, etc." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
+
+        <div class="message" id="message-display"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const CONFIG = {
+      SUPABASE_URL: 'https://fmoswcoyxtebsefhbxxz.supabase.co',
+      SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtb3N3Y295eHRlYnNlZmhieHh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NDU4OTIsImV4cCI6MjA4NzUyMTg5Mn0.ojwYsg1iR4CvXgGkOVJ6J39S7IyTxHxaZIunrXiJaHY',
+    };
+
+    function showMessage(text, type) {
+      const messageEl = document.getElementById('message-display');
+      messageEl.textContent = text;
+      messageEl.className = `message ${type}`;
+      messageEl.style.display = 'block';
+      setTimeout(() => {
+        messageEl.style.display = 'none';
+      }, 5000);
+    }
+
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !company || !message) {
+        showMessage('Please fill in all required fields.', 'error');
+        return false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showMessage('Please enter a valid email address.', 'error');
+        return false;
+      }
+
+      return true;
+    }
+
+    async function saveToSupabase(data) {
+      const response = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/corporate_inquiries`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': CONFIG.SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${CONFIG.SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=representation',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Supabase error: ${error}`);
+      }
+
+      const result = await response.json();
+      return result[0];
+    }
+
+    document.getElementById('corporateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        return;
+      }
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const formData = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          company: document.getElementById('company').value.trim(),
+          team_size: document.getElementById('teamSize').value,
+          message: document.getElementById('message').value.trim(),
+          created_at: new Date().toISOString(),
+        };
+
+        await saveToSupabase(formData);
+        showMessage('Thank you! Your inquiry has been sent. We\'ll be in touch soon.', 'success');
+        document.getElementById('corporateForm').reset();
+
+      } catch (err) {
+        console.error('Error:', err);
+        showMessage('Something went wrong. Please try again or email us directly.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Inquiry';
+      }
+    });
+  </script>
+</body>
+</html>

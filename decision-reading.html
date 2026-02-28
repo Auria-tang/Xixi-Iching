@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎯 Decision Reading By Melody Metaphysics</title>
+  <meta name="description" content="Get clarity on your life decisions. Discover which choice truly works in your favor through ancient Chinese wisdom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #0a0012;
+      color: #e8dff0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .bg-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .bg-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 0, 18, 0.85) 0%,
+        rgba(26, 11, 46, 0.9) 50%,
+        rgba(10, 0, 18, 0.95) 100%
+      );
+      z-index: -1;
+    }
+
+    .header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: rgba(232, 223, 240, 0.6);
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+      transition: color 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .back-link:hover {
+      color: rgba(232, 223, 240, 1);
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #e8dff0, #b39ddb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: rgba(232, 223, 240, 0.8);
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    .intro {
+      background: rgba(138, 43, 226, 0.08);
+      border: 1px solid rgba(138, 43, 226, 0.2);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #b39ddb;
+    }
+
+    .intro p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(232, 223, 240, 0.85);
+      margin-bottom: 15px;
+    }
+
+    .form-card {
+      background: rgba(26, 11, 46, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 8px 32px rgba(138, 43, 226, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(232, 223, 240, 0.9);
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    label .required {
+      color: #ff6b9d;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(10, 0, 18, 0.8);
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      border-radius: 10px;
+      color: #e8dff0;
+      font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: rgba(138, 43, 226, 0.6);
+      background: rgba(10, 0, 18, 0.95);
+      box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.15);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #8a2be2, #9d4edd);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+      background: rgba(138, 43, 226, 0.3);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .message {
+      margin-top: 20px;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .message.success {
+      background: rgba(76, 175, 80, 0.2);
+      border: 1px solid rgba(76, 175, 80, 0.5);
+      color: #a5d6a7;
+    }
+
+    .message.error {
+      background: rgba(244, 67, 54, 0.2);
+      border: 1px solid rgba(244, 67, 54, 0.5);
+      color: #ef9a9a;
+    }
+
+    .price-info {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(138, 43, 226, 0.2);
+    }
+
+    .price-info p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(232, 223, 240, 0.6);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #b39ddb;
+      margin: 10px 0;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .form-card {
+        padding: 30px 25px;
+      }
+
+      .intro {
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-wrapper">
+    <img src="assets/bg.jpg" alt="Background">
+  </div>
+  <div class="bg-overlay"></div>
+
+  <div class="header">
+    <a href="/" class="back-link">← Back to Home</a>
+    <h1>Decision Reading</h1>
+    <p class="tagline">Which choice truly works in my favor?</p>
+  </div>
+
+  <div class="container">
+    <div class="intro">
+      <h2>Get Clarity on Your Path</h2>
+      <p>Standing at a crossroads? Whether it's a career move, relationship decision, or life-changing choice, ancient wisdom can illuminate the path ahead.</p>
+      <p>Through I Ching divination and strategic insight, discover which option aligns with your highest good.</p>
+    </div>
+
+    <div class="form-card">
+      <form id="decisionForm">
+        <div class="form-group">
+          <label for="name">Your Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="decision">What decision are you facing? <span class="required">*</span></label>
+          <textarea id="decision" name="decision" placeholder="Describe your situation and the choices you're considering..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="context">Additional Context (Optional)</label>
+          <textarea id="context" name="context" placeholder="Any background information that might be helpful..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country <span class="required">*</span></label>
+          <input type="text" id="country" name="country" required>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit & Pay</button>
+
+        <div class="price-info">
+          <p>Investment</p>
+          <div class="price">$88 USD</div>
+          <p>Receive your reading within 3 business days</p>
+        </div>
+
+        <div class="message" id="message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const CONFIG = {
+      SUPABASE_URL: 'https://fmoswcoyxtebsefhbxxz.supabase.co',
+      SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtb3N3Y295eHRlYnNlZmhieHh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NDU4OTIsImV4cCI6MjA4NzUyMTg5Mn0.ojwYsg1iR4CvXgGkOVJ6J39S7IyTxHxaZIunrXiJaHY',
+      STRIPE_PAYMENT_LINK: 'https://buy.stripe.com/YOUR_DECISION_READING_LINK',
+    };
+
+    function showMessage(text, type) {
+      const messageEl = document.getElementById('message');
+      messageEl.textContent = text;
+      messageEl.className = `message ${type}`;
+      messageEl.style.display = 'block';
+      setTimeout(() => {
+        messageEl.style.display = 'none';
+      }, 5000);
+    }
+
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const decision = document.getElementById('decision').value.trim();
+      const country = document.getElementById('country').value.trim();
+
+      if (!name || !email || !decision || !country) {
+        showMessage('Please fill in all required fields.', 'error');
+        return false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showMessage('Please enter a valid email address.', 'error');
+        return false;
+      }
+
+      return true;
+    }
+
+    async function saveToSupabase(data) {
+      const response = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/decision_readings`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': CONFIG.SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${CONFIG.SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=representation',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Supabase error: ${error}`);
+      }
+
+      const result = await response.json();
+      return result[0];
+    }
+
+    document.getElementById('decisionForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        return;
+      }
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+
+      try {
+        const formData = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          decision: document.getElementById('decision').value.trim(),
+          context: document.getElementById('context').value.trim(),
+          country: document.getElementById('country').value.trim(),
+          payment_status: 'pending',
+          created_at: new Date().toISOString(),
+        };
+
+        const record = await saveToSupabase(formData);
+        const paymentUrl = `${CONFIG.STRIPE_PAYMENT_LINK}?client_reference_id=${record.id}&prefilled_email=${encodeURIComponent(formData.email)}`;
+        window.location.href = paymentUrl;
+
+      } catch (err) {
+        console.error('Error:', err);
+        showMessage('Something went wrong. Please try again.', 'error');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit & Pay';
+      }
+    });
+  </script>
+</body>
+</html>

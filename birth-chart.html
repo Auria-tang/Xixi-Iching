@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔮 Birth Chart Reading By Melody Metaphysics</title>
+  <meta name="description" content="Unlock the hidden blueprint of your soul. A personalized Birth Chart Reading that reveals who you truly are beneath the noise.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #0a0012;
+      color: #e8dff0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background */
+    .bg-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .bg-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 0, 18, 0.3) 0%,
+        rgba(10, 0, 18, 0.5) 40%,
+        rgba(10, 0, 18, 0.7) 70%,
+        rgba(10, 0, 18, 0.9) 100%
+      );
+      z-index: -1;
+    }
+
+    /* Container */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      position: relative;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid rgba(200, 170, 255, 0.4);
+      margin: 0 auto 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2d1b4e, #4a2d7a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-placeholder {
+      font-size: 40px;
+      opacity: 0.7;
+    }
+
+    .brand-name {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(200, 170, 255, 0.7);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #f0e6ff;
+      margin-bottom: 8px;
+    }
+
+    .hero-emoji {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* Intro Section */
+    .intro {
+      margin-bottom: 48px;
+    }
+
+    .intro p {
+      font-size: 19px;
+      line-height: 1.8;
+      color: #d4c6e6;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* For You Section */
+    .for-you {
+      margin-bottom: 56px;
+      padding: 32px;
+      border-radius: 16px;
+      background: rgba(60, 30, 90, 0.25);
+      border: 1px solid rgba(200, 170, 255, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .for-you h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #c8aaff;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .for-you ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .for-you li {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #d4c6e6;
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      font-weight: 300;
+    }
+
+    .for-you li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #c8aaff;
+      font-size: 12px;
+      top: 12px;
+    }
+
+    /* Divider */
+    .divider {
+      text-align: center;
+      margin: 48px 0;
+      color: rgba(200, 170, 255, 0.3);
+      font-size: 20px;
+      letter-spacing: 12px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      margin-bottom: 56px;
+    }
+
+    .testimonials h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #f0e6ff;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .testimonial-card {
+      padding: 28px;
+      border-radius: 16px;
+      background: rgba(80, 40, 120, 0.2);
+      border: 1px solid rgba(200, 170, 255, 0.15);
+      backdrop-filter: blur(12px);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c8aaff33, #8b5fbf33);
+      border: 1px solid rgba(200, 170, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #c8aaff;
+    }
+
+    .testimonial-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #c8aaff;
+      font-weight: 400;
+    }
+
+    .testimonial-text {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #d4c6e6;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* Form Section */
+    .form-section {
+      margin-bottom: 48px;
+    }
+
+    .form-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #f0e6ff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      color: #a992c4;
+      font-size: 16px;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #c8aaff;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group label .required {
+      color: #ff6b9d;
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(200, 170, 255, 0.2);
+      background: rgba(30, 15, 50, 0.6);
+      color: #e8dff0;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(200, 170, 255, 0.35);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: rgba(200, 170, 255, 0.5);
+      box-shadow: 0 0 20px rgba(150, 100, 255, 0.15);
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23c8aaff' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #1e0f32;
+      color: #e8dff0;
+    }
+
+    .form-hint {
+      font-size: 12px;
+      color: #a992c4;
+      margin-top: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Payment Section */
+    .payment-section {
+      padding: 36px;
+      border-radius: 20px;
+      background: rgba(60, 30, 90, 0.3);
+      border: 1px solid rgba(200, 170, 255, 0.15);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .payment-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #c8aaff;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-family: 'Cinzel', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: #f0e6ff;
+      margin-bottom: 4px;
+    }
+
+    .price-note {
+      font-size: 15px;
+      color: #a992c4;
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+
+    .pay-button {
+      display: inline-block;
+      width: 100%;
+      padding: 18px 48px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pay-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+    }
+
+    .pay-button:active {
+      transform: translateY(0);
+    }
+
+    .pay-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .pay-button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 60%
+      );
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Error / Success Messages */
+    .form-message {
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      display: none;
+    }
+
+    .form-message.error {
+      background: rgba(255, 50, 80, 0.15);
+      border: 1px solid rgba(255, 50, 80, 0.3);
+      color: #ff6b8a;
+      display: block;
+    }
+
+    .form-message.success {
+      background: rgba(50, 200, 100, 0.15);
+      border: 1px solid rgba(50, 200, 100, 0.3);
+      color: #6bffa0;
+      display: block;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      border-top: 1px solid rgba(200, 170, 255, 0.08);
+    }
+
+    .footer p {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: rgba(200, 170, 255, 0.35);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 18px 60px;
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+
+      .intro p {
+        font-size: 17px;
+      }
+
+      .for-you {
+        padding: 24px;
+      }
+
+      .payment-section {
+        padding: 28px;
+      }
+
+      .price {
+        font-size: 42px;
+      }
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg-wrapper">
+    <img src="assets/bg.jpg" alt="cosmic background">
+  </div>
+  <div class="bg-overlay"></div>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="avatar">
+        <span class="avatar-placeholder">🔮</span>
+      </div>
+      <p class="brand-name">Melody Metaphysics</p>
+      <span class="hero-emoji">🔮</span>
+      <h1 class="hero-title">Birth Chart Reading</h1>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+      <p>
+        Most souls wander through life carrying invisible weight — not from a lack of will, 
+        but from moving against the current of their own celestial design.
+      </p>
+      <p>
+        This reading unveils the hidden architecture of your birth chart, 
+        so that your energy flows with purpose rather than dissolving into exhaustion, 
+        confusion, or quiet despair.
+      </p>
+    </section>
+
+    <!-- For You Section -->
+    <section class="for-you">
+      <h2>🔎 This Calling Is For You If</h2>
+      <ul>
+        <li>You've poured everything in — yet an invisible wall keeps standing between you and real progress</li>
+        <li>You're weary of forcing doors that were never meant to open from that side</li>
+        <li>You crave genuine clarity, not another hollow pep talk</li>
+        <li>You're ready to decode yourself rather than endlessly trying to repair what was never broken</li>
+      </ul>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h2>Whispers From Those Who Looked Within</h2>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">✦</div>
+          <span class="testimonial-date">June 2025</span>
+        </div>
+        <p class="testimonial-text">
+          "For years I found myself drawn to the same kind of man over and over — new face, same heartbreak. 
+          But this reading illuminated the pattern I'd been blind to, and why I kept reaching for it. 
+          Strange as it sounds, once I truly understood, that old pull simply lost its grip on me."
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">✦</div>
+          <span class="testimonial-date">August 2025</span>
+        </div>
+        <p class="testimonial-text">
+          "I was always the one who worked the hardest in every room, always going beyond what was asked — 
+          yet no matter how much I gave, the recognition never came. 
+          This reading revealed the hidden layers of unworthiness I'd been carrying beneath the surface. 
+          Once I saw them clearly, everything began to shift."
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">✦</div>
+          <span class="testimonial-date">September 2025</span>
+        </div>
+        <p class="testimonial-text">
+          "The smallest things would set me off, and then the guilt would hit — losing my patience with my husband and kids over nothing. 
+          I knew a calmer version of me existed somewhere. 
+          This reading gave me real, practical insight into my triggers, along with a personalized scent recommendation to ground my mood and find my center again. 
+          I genuinely feel more at peace now."
+        </p>
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- Form -->
+    <section class="form-section">
+      <h2>Begin Your Reading</h2>
+      <p class="form-subtitle">Share your celestial coordinates with us</p>
+
+      <div id="formMessage" class="form-message"></div>
+
+      <form id="readingForm">
+        <div class="form-group">
+          <label>What you want to be called? <span class="required">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Your name or alias" required>
+        </div>
+
+        <div class="form-group">
+          <label>Your birthday <span class="required">*</span></label>
+          <input type="text" id="birthday" name="birthday" placeholder="e.g. 1990-06-15 or June 15, 1990" required>
+        </div>
+
+        <div class="form-group">
+          <label>Time you were born (if known)</label>
+          <input type="text" id="birthTime" name="birth_time" placeholder="e.g. 3:30 PM or 15:30">
+          <p class="form-hint">If you don't know the exact time, leave this empty</p>
+        </div>
+
+        <div class="form-group">
+          <label>Your email to receive the reading <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Country of birth <span class="required">*</span></label>
+          <input type="text" id="country" name="country" placeholder="e.g. United States (EST)" required>
+          <p class="form-hint">Please include time zone if applicable</p>
+        </div>
+      </form>
+    </section>
+
+    <!-- Payment -->
+    <section class="payment-section">
+      <h2>Sacred Exchange</h2>
+      <div class="price">$129</div>
+      <p class="price-note">One-time reading · Delivered to your email</p>
+      <button class="pay-button" id="payButton" onclick="handlePayment()">
+        Unveil Your Chart
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Melody Metaphysics. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // ============================================
+    // CONFIGURATION — Replace with your real keys
+    // ============================================
+    const CONFIG = {
+      // Supabase
+      SUPABASE_URL: 'https://fmoswcoyxtebsefhbxxz.supabase.co',
+      SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtb3N3Y295eHRlYnNlZmhieHh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE5NDU4OTIsImV4cCI6MjA4NzUyMTg5Mn0.ojwYsg1iR4CvXgGkOVJ6J39S7IyTxHxaZIunrXiJaHY',
+
+      // Stripe
+      STRIPE_PUBLISHABLE_KEY: 'pk_test_YOUR_STRIPE_KEY',
+      // This should be a Stripe Checkout link or a server-side endpoint
+      // For simplest setup: create a Stripe Payment Link and redirect to it
+      STRIPE_PAYMENT_LINK: 'https://buy.stripe.com/YOUR_PAYMENT_LINK',
+    };
+
+    // ============================================
+    // Form Validation
+    // ============================================
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const birthday = document.getElementById('birthday').value;
+      const email = document.getElementById('email').value.trim();
+      const country = document.getElementById('country').value.trim();
+
+      if (!name || !birthday || !email || !country) {
+        showMessage('Please fill in all required fields.', 'error');
+        return false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showMessage('Please enter a valid email address.', 'error');
+        return false;
+      }
+
+      return true;
+    }
+
+    function showMessage(text, type) {
+      const msgEl = document.getElementById('formMessage');
+      msgEl.textContent = text;
+      msgEl.className = 'form-message ' + type;
+    }
+
+    function clearMessage() {
+      const msgEl = document.getElementById('formMessage');
+      msgEl.className = 'form-message';
+      msgEl.textContent = '';
+    }
+
+    // ============================================
+    // Save to Supabase
+    // ============================================
+    async function saveToSupabase(data) {
+      const response = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/readings`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': CONFIG.SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${CONFIG.SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=headers-only',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        let errorMsg = 'Failed to save your information.';
+        try { const errorData = await response.json(); errorMsg = errorData.message || errorMsg; } catch(e) {}
+        throw new Error(errorMsg);
+      }
+
+      // headers-only mode: extract ID from Location header
+      const location = response.headers.get('Location');
+      let id = null;
+      if (location) {
+        const match = location.match(/id=eq\.([a-f0-9-]+)/);
+        if (match) id = match[1];
+      }
+      return { id };
+    }
+
+    // ============================================
+    // Handle Payment
+    // ============================================
+    async function handlePayment() {
+      clearMessage();
+
+      if (!validateForm()) return;
+
+      const btn = document.getElementById('payButton');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Processing...';
+
+      try {
+        const formData = {
+          name: document.getElementById('name').value.trim(),
+          birthday: document.getElementById('birthday').value,
+          birth_time: document.getElementById('birthTime').value || null,
+          email: document.getElementById('email').value.trim(),
+          country: document.getElementById('country').value.trim(),
+          payment_status: 'pending',
+        };
+
+        // 1. Save to Supabase
+        const record = await saveToSupabase(formData);
+
+        // 2. Redirect to Stripe Payment Link
+        // Append client_reference_id so you can match payment to the record
+        const paymentUrl = `${CONFIG.STRIPE_PAYMENT_LINK}?client_reference_id=${record.id}&prefilled_email=${encodeURIComponent(formData.email)}`;
+        window.location.href = paymentUrl;
+
+      } catch (err) {
+        console.error('Error:', err);
+        showMessage('Something went wrong. Please try again.', 'error');
+        btn.disabled = false;
+        btn.innerHTML = 'Unveil Your Chart';
+      }
+    }
+  </script>
+
+</body>
+</html>
